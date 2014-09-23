@@ -1,12 +1,13 @@
-//exports.PAIRS = { rock: 'scissors', paper: 'rock', scissors: 'paper' }
+function Game(){
 
-var Game = function(player1,player2){
+	this.player1;
+	this.player2;
 
-	this.player1 = player1;
-	this.player2 = player2;
 };
 
-var randomPick = function(){
+//var randomPick = Game.randomPick;
+
+Game.prototype.randomPick = function(){
 
 	var pick = { rock: 'scissors', paper: 'rock', scissors: 'paper' };
 
@@ -17,6 +18,7 @@ var randomPick = function(){
 	return all_keys[this_pick]
 };
 
-module.exports.Game = Game;
+module.exports = Game;
 
-module.exports.randomPick = randomPick;
+//module.exports.randomPick = randomPick;
+//exports.PAIRS = { rock: 'scissors', paper: 'rock', scissors: 'paper' }

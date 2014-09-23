@@ -14,8 +14,8 @@ router.get('/', function(request, respond) {
 
 router.post('/',function(request, respond){
 	player1 = new player_class(request.param('player1'));
-	// player2 = new player_class('computer');
-	// game    = new game_class.Game(player1,player2);
+	player2 = new player_class('computer');
+	game    = new game_class(player1,player2);
 
 
 	// console.log(player1,player2,game)
@@ -25,11 +25,13 @@ router.post('/',function(request, respond){
 
 router.post('/game', function(request,respond){
 
-	pick1 = request.param('name')
+	pick1 = request.param('name');
+	pick2 = game.randomPick();
 
 	console.log(pick1)
 
-	respond.render('result', { result_player1: game_class.randomPick() })
+	respond.render('result', { pick1: pick1,
+														 pick2: pick2 })
 })
 
 module.exports = router;
