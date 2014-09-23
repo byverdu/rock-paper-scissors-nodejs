@@ -14,23 +14,22 @@ router.get('/', function(request, respond) {
 
 router.post('/',function(request, respond){
 	player1 = new player_class(request.param('player1'));
-	player2 = new player_class(request.param('player2'));
-	game    = new game_class.Game(player1,player1)
+	// player2 = new player_class('computer');
+	// game    = new game_class.Game(player1,player2);
 
 
-	console.log(player1,player2,game)
+	// console.log(player1,player2,game)
 
-	respond.render('game',{ 
-
-				player1: player1.name, 
-				player2: player2.name, 
-				result_player1: 'game' 
-	})
+	respond.render('game',{ player1: player1.name })
 })
 
 router.post('/game', function(request,respond){
 
-	respond.render('result', { result_player1: game_class.albert() })
+	pick1 = request.param('name')
+
+	console.log(pick1)
+
+	respond.render('result', { result_player1: game_class.randomPick() })
 })
 
 module.exports = router;

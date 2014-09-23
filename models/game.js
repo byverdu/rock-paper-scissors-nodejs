@@ -6,7 +6,7 @@ var Game = function(player1,player2){
 	this.player2 = player2;
 };
 
-var picks = function(){
+var randomPick = function(){
 
 	var pick = { rock: 'scissors', paper: 'rock', scissors: 'paper' };
 
@@ -17,6 +17,6 @@ var picks = function(){
 	return all_keys[this_pick]
 };
 
-module.exports.Game = Game
+module.exports.Game = Game;
 
-module.exports.albert = picks
+module.exports.randomPick = randomPick;

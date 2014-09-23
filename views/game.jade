@@ -2,11 +2,14 @@ extends layout
 
 block content
 
-	button.user #{player1} picks
-	button.user #{player2} picks
-
+	h1 Hello #{player1}
+	
 	form(method="post", action="/game")
+		button(type="submit", name="name", value="rock") rock
+		button(type="submit", name="name", value="paper") paper
+		button(type="submit", name="name", value="scissors") scissors
 
-		button(type="submit",name="btn_to")
+
+
 
 	
