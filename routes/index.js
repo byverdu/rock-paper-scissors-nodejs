@@ -30,7 +30,7 @@ router.post('/',function(request, respond){
 
 router.post('/game', function(request,respond){
 
-	respond.render('result', { result_player1: game.player1.name })
+	respond.render('result', { result_player1: game_class.albert() })
 })
 
 module.exports = router;
