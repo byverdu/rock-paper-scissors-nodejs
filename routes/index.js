@@ -4,7 +4,7 @@ var game_class   = require('../models/game');
 var express = require('express');
 var router = express.Router();
 
-var game, player1, player2;
+var game, player1, player2, pick1, pick2;
 
 /* GET home page. */
 
@@ -21,18 +21,22 @@ router.post('/',function(request, respond){
 	// console.log(player1,player2,game)
 
 	respond.render('game',{ player1: player1.name })
+
 })
 
 router.post('/game', function(request,respond){
 
-	pick1 = request.param('name');
-	pick2 = game.randomPick();
+	pick1 = player1.picks(request.param('name'));
+	pick2 = player2.picks(game.randomPick());
 
-	console.log(pick1)
 
-	respond.render('result', { pick1: pick1,
-														 pick2: pick2 })
-})
+	console.log(game.winner())
+
+	respond.render('result', { pick1: game.player1.pick,
+														 pick2: game.player2.pick, 
+														 player_winner: game.winner().name,
+														 player_pick:   game.winner().pick })
+});
 
 module.exports = router;
 

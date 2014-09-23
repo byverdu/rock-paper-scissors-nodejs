@@ -6,6 +6,11 @@ block content
 
 	p #{pick2}
 
-	p #{player1}
+	if player_winner !== null
 
-	p #{player2}
+		p #{player_winner}
+
+		p #{player_pick}
+
+	else
+		p Is a draw
