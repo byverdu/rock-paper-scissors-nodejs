@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
 		//console.log($('input[name=age]').val())
 	});
 
-	$('.user').each(function(el) {
+	$('p').each(function(el) {
 		console.log($(this).text())
 	});
 

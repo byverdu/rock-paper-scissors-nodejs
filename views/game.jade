@@ -2,5 +2,11 @@ extends layout
 
 block content
 
-	p #{player1}
-	p #{player2}
+	button.user #{player1} picks
+	button.user #{player2} picks
+
+	form(method="post", action="/game")
+
+		button(type="submit",name="btn_to")
+
+	

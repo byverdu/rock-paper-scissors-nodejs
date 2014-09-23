@@ -1,1 +1,0 @@
-exports.PAIRS = { rock: 'scissors', paper: 'rock', scissors: 'paper' }
